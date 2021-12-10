@@ -80,9 +80,9 @@ $env:TAICHI_CMAKE_ARGS += " -DCLANG_EXECUTABLE=$libsDir\\taichi_clang\\bin\\clan
 $env:TAICHI_CMAKE_ARGS += " -DLLVM_AS_EXECUTABLE=$libsDir\\taichi_llvm\\bin\\llvm-as.exe"
 if ($install) {
     if ($develop) {
-        python -m pip install -v -e .
+        python setup.py develop
     } else {
-        python -m pip install -v .
+        python setup.py install
     }
     WriteInfo("Build and install finished")
 } else {
